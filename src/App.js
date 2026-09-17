@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+// Importa o componente filho (ajuste o caminho se o arquivo estiver dentro de 'src/components/')
+import ListaDeTarefas from './components/ListaDeTarefas'; 
 
-function App() {
+export default function App() {
+  // 1. Definição dos dados para teste
+  const listaComItens = ['Comprar pão', 'Estudar React', 'Praticar exercícios'];
+  const listaVazia = [];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
+      <h1>Painel de Tarefas</h1>
+
+      <h3>Teste 1 (Com tarefas):</h3>
+      {/* Passa o array preenchido para a prop 'tarefas' */}
+      <ListaDeTarefas tarefas={listaComItens} />
+
+      <h3>Teste 2 (Sem tarefas):</h3>
+      {/* Passa o array vazio para a prop 'tarefas' */}
+      <ListaDeTarefas tarefas={listaVazia} />
     </div>
   );
 }
-
-export default App;
